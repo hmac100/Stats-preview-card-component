@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Karla:wght@200..800&family=Playfair+Display:ital@0;1&family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Karla:wght@200..800&family=Lexend+Deca&family=Playfair+Display:ital@0;1&family=Roboto:wght@300;400&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Karla:wght@200..800&family=Lexend+Deca&family=Playfair+Display:ital@0;1&family=Roboto:wght@300;400&display=swap");
+
+*,
+*::before,
+::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--prim-Clr-main-background: hsl(233, 47%, 7%);
+	--prim-Clr-card-background: hsl(244, 38%, 16%);
+	--prim-Clr-accent: hsl(277, 64%, 61%);
+	--neut-Clr-main-heading-stats: hsl(0, 0%, 100%);
+	--neut-Clr-main-paragraph: hsla(0, 0%, 100%, 0.75);
+	--neut-Clr-stat-headings: hsla(0, 0%, 100%, 0.6);
+	font-size: 15px;
+	--font-Inter: "Inter", sans-serif;
+	--font-Lexend-Deca: "Lexend Deca", sans-serif;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: var(--font-Inter);
+	background-color: var(--prim-Clr-main-background);
+	color: var(--neut-Clr-main-heading-stats);
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+	margin: 6rem 0;
+	gap: 2rem;
+	background-color: var(--prim-Clr-card-background);
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.image {
+	background-image: url("./images/image-header-mobile.jpg");
+	background-repeat: no-repeat;
+	background-size: 90vw 34vh;
+	width: 90vw;
+	height: 34vh;
+	filter: contrast(180%);
+	position: relative;
+}
+
+.overlay {
+	width: 90vw;
+	height: 34vh;
+	background-color: var(--prim-Clr-accent);
+	position: absolute;
+	opacity: 0.6;
+}
+
+h1 {
+	text-align: center;
+	line-height: 2.3rem;
+	font-family: var(--font-Inter);
+	font-weight: 700;
+	margin-bottom: 2rem;
+}
+h1 span {
+	color: var(--prim-Clr-accent);
+}
+
+.card-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+	margin: 1rem 2rem;
+}
+p.text {
+	color: var(--neut-Clr-main-paragraph);
+	text-align: center;
+	margin-bottom: 3rem;
+	line-height: 1.7rem;
+	max-width: 94%;
+}
+
+.stat-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.stats {
+	font-weight: 700;
+	font-size: 1.6rem;
+	font-family: var(--font-Lexend-Deca);
+	text-align: center;
+}
+
+.stat-heading {
+	font-family: var(--font-Lexend-Deca);
+	text-transform: uppercase;
+	color: var(--neut-Clr-stat-headings);
+	font-size: 0.875rem;
+	letter-spacing: 0.05em;
+	margin-top: 0.5rem;
+}
+.stat-heading:last-child {
+	margin-bottom: 2rem;
+}
+
+/* ----------------DESKTOP--------------------------- */
+@media (min-width: 700px) {
+	.card-info {
+		order: 2;
+	}
+	.container {
+		width: 78%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	.body-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		padding: 0 2rem;
+	}
+	.image {
+		background-image: url("./images/image-header-desktop.jpg");
+		background-size: 102% 100%;
+		max-width: 100%;
+		object-fit: contain;
+	}
+
+	.image,
+	.overlay {
+		max-width: 100%;
+		height: 450px;
+	}
+
+	.card-info {
+		display: flex;
+		flex-direction: column;
+		margin-left: 4rem;
+		width: 70%;
+	}
+	.col-text {
+		width: 50%;
+		order: -1;
+		margin-left: 2rem;
+	}
+
+	.col-image {
+		width: 50%;
+	}
+	h1 {
+		font-size: 2.3rem;
+		line-height: 2.8rem;
+		text-align: left;
+	}
+
+	p.text {
+		text-align: left;
+		opacity: 0.7;
+	}
+	.stat-info {
+		margin-top: 2rem;
+		display: flex;
+		margin: 0 1rem;
+		justify-content: flex-start;
+		align-content: flex-start;
+		gap: 2.5rem;
+	}
+	.stat-info {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+	}
+
+	.stat-heading {
+		align-self: flex-end;
+		margin-top: 0.5rem;
+	}
+	.stat-heading:last-child {
+		margin-bottom: 0;
+	}
+}
